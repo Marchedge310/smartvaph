@@ -1,9 +1,13 @@
 import { AdultCauses46 }
 from "./AdultCauses46";
 
+import type {
+  CauseLookupResult
+} from "./CauseLookupResult";
+
 export function resolveAdultCause(
   causeId: number
-): string {
+): CauseLookupResult {
 
   const cause =
     AdultCauses46.find(
@@ -11,6 +15,13 @@ export function resolveAdultCause(
         item.id === causeId
     );
 
-  return cause?.name ??
-    "Unknown Cause";
+  return {
+
+    id: causeId,
+
+    name:
+      cause?.name ??
+      "Unknown Cause"
+  };
 }
+ 
