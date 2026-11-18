@@ -1,3 +1,7 @@
+import {
+  resolveAdultCause
+} from "../causes";
+
 import type {
   RuleEvaluationResult
 } from "../rules";
@@ -10,40 +14,55 @@ import type {
   PredictionEngineResult
 } from "./PredictionEngineResult";
 
-import { selectTopCauses }
-from "./TopCauseSelector";
+import {
+  selectTopCauses
+} from "./TopCauseSelector";
 
 export function buildPrediction(
   ruleResult: RuleEvaluationResult,
   rankedCandidates: RankedCandidate[]
 ): PredictionEngineResult {
 
-  if (
-    ruleResult.matched &&
-    ruleResult.causeId
-  ) {
-
-    return {
-      primaryCause:
-        ruleResult.causeId,
-
-      topThreeCauses:
-        selectTopCauses(
-          rankedCandidates
-        ),
-
-      ruleTriggered: true
-    };
-  }
-
   const topThree =
     selectTopCauses(
       rankedCandidates
     );
 
+  if (
+    ruleResult.matched &&
+    ruleResult.causeId
+  ) {
+
+    const cause =
+      resolveAdultCause(
+        ruleResult.causeId
+      );
+
+    return {
+      primaryCause:
+        cause.id,
+
+      primaryCauseName:
+        cause.name,
+
+      topThreeCauses:
+        topThree,
+
+      ruleTriggered: true
+    };
+  }
+
+  const cause =
+    resolveAdultCause(
+      topThree[0].causeId
+    );
+
   return {
     primaryCause:
-      topThree[0].causeId,
+      cause.id,
+
+    primaryCauseName:
+      cause.name,
 
     topThreeCauses:
       topThree,
