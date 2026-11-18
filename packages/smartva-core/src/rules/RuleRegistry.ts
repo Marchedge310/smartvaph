@@ -1,5 +1,7 @@
-import type { RuleDefinition }
-from "../models";
+import type {
+  AdvancedRuleDefinition
+} from "./AdvancedRuleDefinition";
 
 export const RuleRegistry:
-RuleDefinition[] = [];
+AdvancedRuleDefinition[] = [];
+ 
