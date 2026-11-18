@@ -1,13 +1,11 @@
 import {
-  StrokeRule
-} from "./adult/StrokeRule";
+  AdultRuleRegistry
+} from "./adult";
 
 import type {
   AdvancedRuleDefinition
 } from "./AdvancedRuleDefinition";
 
 export const RuleRegistry:
-AdvancedRuleDefinition[] = [
-
-  StrokeRule
-];
+AdvancedRuleDefinition[] =
+  AdultRuleRegistry;
