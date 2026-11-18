@@ -33,16 +33,12 @@ AdvancedRuleDefinition = {
             conditions: [
 
               {
-                symptom:
-                  "paralysis_left",
-
+                symptom: "paralysis_left",
                 expected: true
               },
 
               {
-                symptom:
-                  "paralysis_right",
-
+                symptom: "paralysis_right",
                 expected: true
               }
             ]
@@ -56,16 +52,12 @@ AdvancedRuleDefinition = {
         conditions: [
 
           {
-            symptom:
-              "diabetes",
-
+            symptom: "diabetes",
             expected: true
           },
 
           {
-            symptom:
-              "paralysis",
-
+            symptom: "paralysis",
             expected: true
           }
         ]
@@ -77,16 +69,12 @@ AdvancedRuleDefinition = {
         conditions: [
 
           {
-            symptom:
-              "pneumonia",
-
+            symptom: "pneumonia",
             expected: true
           },
 
           {
-            symptom:
-              "paralysis",
-
+            symptom: "paralysis",
             expected: true
           }
         ]
