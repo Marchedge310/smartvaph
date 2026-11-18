@@ -6,3 +6,5 @@ export * from "./RuleCondition";
 export * from "./ConditionGroup";
 export * from "./AdvancedRuleDefinition";
 export * from "./ConditionEvaluator";
+export * from "./adult";
+
