@@ -5,6 +5,8 @@ import type {
 export interface PredictionEngineResult {
   primaryCause: number;
 
+  primaryCauseName: string;
+
   topThreeCauses: RankedCandidate[];
 
   ruleTriggered: boolean;
