@@ -1,13 +1,14 @@
 import {
+  RoadTrafficRule
+} from "./RoadTrafficRule";
+
+import {
   StrokeRule
 } from "./StrokeRule";
 
-import type {
-  AdvancedRuleDefinition
-} from "../AdvancedRuleDefinition";
+export const AdultRuleRegistry = [
 
-export const AdultRuleRegistry:
-AdvancedRuleDefinition[] = [
+  RoadTrafficRule,
 
   StrokeRule
 ];
