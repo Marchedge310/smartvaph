@@ -13,3 +13,7 @@ export * from "./ChildModelInstance";
 export * from "./NeonateModelInstance";
 
 export * from "./ModelRegistry";
+
+export * from "./ModelAssetRegistry";
+export * from "./ModelAssetLoader";
+
